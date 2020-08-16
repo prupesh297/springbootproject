@@ -51,7 +51,7 @@ app.controller("EmployeeController", function($scope, $http) {
     $scope.deleteEmployee = function(employee) {
         $http({
             method: 'DELETE',
-            url: '/employeeapi/emp/empl/' + employee.id
+            url: '/empapp/emp/empl/' + employee.id
         }).then(_success, _error);
     };
     
