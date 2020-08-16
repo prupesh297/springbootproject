@@ -25,11 +25,11 @@ app.controller("EmployeeController", function($scope, $http) {
         if ($scope.employeeForm.id == -1) {
         	console.log("create methode");
             method = "POST";
-            url = '/employeeapi/emp/createemployee';
+            url = '/empapp/emp/createemployee';
         } else {
         	console.log("update methode");
             method = "PUT";
-            url = '/employeeapi/emp/updateemployee';
+            url = '/empapp/emp/updateemployee';
         }
  
         $http({
@@ -70,7 +70,7 @@ app.controller("EmployeeController", function($scope, $http) {
     function _refreshEmployeeData() {
         $http({
             method: 'GET',
-            url: '/employeeapi/emp/allemployee'
+            url: '/empapp/emp/allemployee'
         }).then(
             function(res) { // success
                 $scope.employees = res.data;
@@ -115,7 +115,7 @@ app.controller("EmployeeController", function($scope, $http) {
     //ng-click="SelectFile(myForm.file)
     $scope.doUploadFile = function(files) {  
     	//SelectFile(); 
-        var url = "/employeeapi/emp/upload/excel";
+        var url = "/empapp/emp/upload/excel";
         var data = new FormData();
         data.append("file", files[0]);
         console.log("file Name:"+files[0].name)
